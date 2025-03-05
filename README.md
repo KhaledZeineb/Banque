@@ -45,57 +45,66 @@ CREATE TABLE compte (
         (type_compte = 'epargne' AND taux_interet IS NOT NULL)
     )
 );
+```
 
-## Exemple d'insertion dans la table compte 
+## Exemple d'insertion dans la table compte
+
+```sql
 INSERT INTO compte (numero_compte, solde, taux_interet, type_compte, banque_id)
 VALUES ('57895', 78520, NULL, 'courant', 1);
+```
 
 ## Classes et Description
-1.	Test.java : Point d'entrée du programme. Permet de simuler les ajouts de banques et de comptes, ainsi que les opérations de dépôt et de retrait.
 
-2.	CompteClient.java : Classe représentant un compte bancaire générique. Permet de gérer les opérations de dépôt, retrait et de récupérer les informations du compte.
-
-3.	CompteEpargne.java : Hérite de CompteClient. Permet de calculer et d'ajouter les bénéfices pour un compte d'épargne basé sur le taux d'intérêt.
-
-4.	SoldeInsuffisantException.java : Exception personnalisée pour gérer les erreurs liées aux soldes insuffisants lors des opérations de retrait.
-
-5.	Bank.java : Classe représentant une banque qui gère les comptes bancaires et les banques enregistrées dans une base de données PostgreSQL. Elle permet de se connecter à la base de données, d'ajouter une nouvelle banque, d'ajouter un compte bancaire associé à une banque, de récupérer les informations d’un compte, de les mettre à jour et de supprimer un compte bancaire.
+1. **Test.java** : Point d'entrée du programme. Permet de simuler les ajouts de banques et de comptes, ainsi que les opérations de dépôt et de retrait.
+2. **CompteClient.java** : Classe représentant un compte bancaire générique. Permet de gérer les opérations de dépôt, retrait et de récupérer les informations du compte.
+3. **CompteEpargne.java** : Hérite de CompteClient. Permet de calculer et d'ajouter les bénéfices pour un compte d'épargne basé sur le taux d'intérêt.
+4. **SoldeInsuffisantException.java** : Exception personnalisée pour gérer les erreurs liées aux soldes insuffisants lors des opérations de retrait.
+5. **Bank.java** : Classe représentant une banque qui gère les comptes bancaires et les banques enregistrées dans une base de données PostgreSQL. Elle permet de se connecter à la base de données, d'ajouter une nouvelle banque, d'ajouter un compte bancaire associé à une banque, de récupérer les informations d’un compte, de les mettre à jour et de supprimer un compte bancaire.
 
 ## Utilisation
-Étapes de l'exécution :
--	Ajouter une banque (par exemple, "Banque A").
--	Ajouter un compte d'épargne (avec un solde initial et un taux d'intérêt).
--	Lire et afficher les informations du compte avant modification.
--	Ajouter un dépôt sur le compte.
--	Lire et afficher les informations du compte après modification.
 
-## Exemple de sortie :
+Étapes de l'exécution :
+- Ajouter une banque (par exemple, "Banque A").
+- Ajouter un compte d'épargne (avec un solde initial et un taux d'intérêt).
+- Lire et afficher les informations du compte avant modification.
+- Ajouter un dépôt sur le compte.
+- Lire et afficher les informations du compte après modification.
+
+### Exemple de sortie :
+
+```
 Compte avant mise à jour: Solde = 80000.0
 Dépôt de 900.0 effectué. Solde: 80900.0
 Compte après mise à jour: Solde = 80900.0
+```
 
 ## Prérequis
-Java 8 ou version supérieure
-PostgreSQL pour la gestion de la base de données
-JDBC pour la connexion à la base de données
+
+- Java 8 ou version supérieure
+- PostgreSQL pour la gestion de la base de données
+- JDBC pour la connexion à la base de données
 
 ## Installation
-Clonez ce repository sur votre machine locale :
-git clone https://github.com/KhaledZeineb/Banque.git
-Configurez votre base de données PostgreSQL et créez les tables décrites dans la section "Structure de la Base de Données".
-Modifiez les configurations de connexion à la base de données dans le code, si nécessaire.
-Compilez et exécutez le programme Java :
-javac Test.java
-java Test
+
+1. Clonez ce repository sur votre machine locale :
+
+   ```sh
+   git clone https://github.com/KhaledZeineb/Banque.git
+   ```
+
+2. Configurez votre base de données PostgreSQL et créez les tables décrites dans la section "Structure de la Base de Données".
+3. Modifiez les configurations de connexion à la base de données dans le code, si nécessaire.
+4. Compilez et exécutez le programme Java :
+
+   ```sh
+   javac Test.java
+   java Test
+   ```
 
 ## Contributions
+
 Les contributions sont les bienvenues ! Si vous avez des idées pour améliorer ce projet, veuillez créer une issue ou soumettre une pull request.
 
-Merci d'utiliser ce projet pour gérer vos comptes bancaires ! 
-
-
-
-
-
-
+Merci d'utiliser ce projet pour gérer vos comptes bancaires ! 🚀
 
